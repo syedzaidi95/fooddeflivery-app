@@ -1,0 +1,11 @@
+.bgImg{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: -50;
+  opacity: 0.5;
+}
+.mainDiv{
+  text-align: center;
+}
