@@ -1,0 +1,69 @@
+.mainDivHeader{
+    position: fixed;
+    padding: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #121924;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 45px !important;
+    z-index: 100;
+}
+.logoHeader{
+    width: 120px;
+    height: 40px;
+}
+h1{
+    font-family: 'Roboto Slab', serif;
+    font-size: 42px;
+    /* margin: 0 0 15px; */
+    font-weight: 400;
+}
+.innerDiv{
+    background-color: rgba(0, 0, 0, 0.514);
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 200px;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    z-index: 1;
+
+}
+.background{
+    overflow: hidden;
+    background-image: url(../Images/home.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -50;
+}
+.btn{
+    height: 40px;
+    background: none;
+    border: none;
+    /* width: 100px; */
+    color: #ffffff;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.btn:hover{
+    color: #e8500e !important
+}
+.li{
+    line-height: 0;
+}

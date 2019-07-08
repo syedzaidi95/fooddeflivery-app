@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Input from '@material-ui/core/Input'
 import { NormalBtn } from '../helpers/Buttons'
 import { login } from '../API/firebaseApi'
-import { updateuser, removeUser } from '../Redux/actions/authAction'
+import { updateuser } from '../Redux/actions/authAction'
 import { connect } from 'react-redux'
 
 class LoginForm extends Component {
@@ -34,7 +34,6 @@ class LoginForm extends Component {
         const {email, password } = this.state
             return (
                 <div style={{ marginTop: '200px' }}>
-                <NormalBtn func={() => { this.props.history.push('/') }} style={{ marginLeft: '250px', backgroundColor: 'red' }} text='X' />
                 <h1>SignIn</h1>
                 <Input style={{ width: '300px' }} value={email} onChange={e => this.setState({ email: e.target.value })} placeholder='Email' type='email' />
                 <br />
@@ -43,14 +42,12 @@ class LoginForm extends Component {
                 <br />
                 <br />
                 <NormalBtn text='SignIn' func={this.userLogin} />
-                <button onClick={()=>{this.props.removeUser()}}>LOG out</button>
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    // console.log('mapstatetoprops ===> ', state.reducer.user)
     return {
         user: state.reducer.user
     }
@@ -59,8 +56,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         updateuser: (user) => dispatch(updateuser(user)),
-        removeUser: () => dispatch(removeUser())
-
     }
 }
 

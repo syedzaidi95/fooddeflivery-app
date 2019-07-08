@@ -119,7 +119,7 @@ class ResturantReg extends Component {
         const normalStyle = { width: '300px', height: '50px' }
         console.log(location)
         return (
-            <div>{this.state.loading ? <RegLoader /> :<div style={{display: 'flex', flexDirection: 'row-reverse', justifyContent: 'space-around'}}> <div><Map func={this.getLocationOfMap} /></div> <div style={{display: 'flex', flexDirection: 'column'}}>
+            <div>{this.state.loading ? <RegLoader /> :<div style={{display: 'flex', flexDirection: 'row-reverse', justifyContent: 'space-around'}}> <div><Map style={{height: 350, width: 350}} func={this.getLocationOfMap} /></div> <div style={{display: 'flex', flexDirection: 'column'}}>
                 <TextField
                     onChange={(event) => this.handleUserInput(event)}
                     value={resturantName}

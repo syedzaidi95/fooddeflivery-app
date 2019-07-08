@@ -1,0 +1,9 @@
+.resturantMain{
+    background-color: white !important;
+}
+.bgImage{
+    background-image: url(../../../Images/home.jpg);
+    padding-top: 100px;
+    height: 100vh;
+    color: rgb(255, 249, 215)
+}

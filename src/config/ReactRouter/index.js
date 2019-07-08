@@ -8,6 +8,10 @@ import Homepage from '../../screens/homePage';
 import { connect } from 'react-redux';
 import ResturantDashboard from '../../screens/Dashboard/Resturant/ResturantDashboard'
 import UserDashBoard from '../../screens/Dashboard/User/UserDashBoard'
+// import ResturantPageVeiw from '../../screens/Dashboard/User/resturantPageVeiw';
+// import CatogeryPage from '../../screens/Dashboard/User/catogeryPageVeiw'
+import Resturant from '../../screens/Dashboard/User/ResturantPage'
+import OrderStatuseTabs from '../../screens/Dashboard/Resturant/OrderStatuseTabs'
 
 class AppRouter extends Component {
 constructor(){
@@ -21,21 +25,24 @@ constructor(){
   }
 
   dashboard(){
-    if(this.state.user.accountType === 'resturant'){
+    if(this.state.user && this.state.user.accountType === 'resturant'){
       return(<Route path="/dashboard" component={ResturantDashboard} />)
     }else{
       return(<Route path="/dashboard" component={UserDashBoard} />)      
     }
-    
   }
-  render(){
-    // console.log('state from Router ' ,this.state.user)
+
+render(){
     return (
       <Router>
         <div>
           <Route path="/" exact component={Homepage} />
           <Route path="/login" component={Login} />
           <Route path="/registration" component={TabsWrappedLabel} />
+          {/* <Route path="/resturantpage" component={ResturantPageVeiw} /> */}
+          {/* <Route path="/catogerypage" component={CatogeryPage} /> */}
+          <Route path="/resturantPage" component={Resturant} />
+          <Route path="/OrderStatuseTabs" component={OrderStatuseTabs} />
           {this.state.user !== null && this.dashboard()}
         </div>
       </Router>

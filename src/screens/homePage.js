@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NormalBtn } from '../helpers/Buttons'
-// import logoImg from '../Images/logo.png'
+import logoImg from '../Images/logo.png'
 
 class Homepage extends Component{
 
@@ -8,7 +8,9 @@ class Homepage extends Component{
     render() {
         return (
             <div style={{marginTop: '150px'}}>
-            <h1 style={{color: 'white'}}>Food Now</h1>
+            <h1>
+            <img style={{backgroundColor: '#1b1b1b', padding: 20, borderRadius: 25}} src={logoImg} alt='logo' />
+            </h1>
             <br />
             <NormalBtn func={()=>{this.props.history.push('/login')}} color='default' style={{width: '300px', color: 'orange'}} text='Login' />
             <br />

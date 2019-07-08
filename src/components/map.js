@@ -16,15 +16,18 @@ componentDidMount(){
     navigator.geolocation.getCurrentPosition((position)=>{
          let lat = position.coords.latitude;
          let lng = position.coords.longitude
-        this.setState({lat: lat, lng: lng})
+        // this.props.func(lat, lng)
+         this.setState({lat: lat, lng: lng})
         })
 
 }
 shouldComponentUpdate(nextProps, nextState){
     const {lng, lat} = this.state;
-return(
-    nextState.lng !== lng && nextState.lat !== lat
-)
+    // console.log(lng, lat)
+    // this.props.func(lat, lng)
+    return(
+        nextState.lng !== lng && nextState.lat !== lat
+        )
 }
 updateState(loc){
     this.setState({lat: loc.latLng.lat(), lng: loc.latLng.lng()})
@@ -45,7 +48,7 @@ updateState(loc){
                     location={location}
                     googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
                     loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `400px` , width: `400px` }} />}
+                    containerElement={<div style={this.props.style} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
             </div>
